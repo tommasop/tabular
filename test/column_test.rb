@@ -87,6 +87,11 @@ module Tabular
       assert_equal "planet", table.columns[:planet].to_space_delimited
     end
 
+    def test_to_tab_delimited
+      table = Table.new([[ "planet", "star" ]])
+      assert_equal "planet", table.columns[:planet].to_tab_delimited
+    end
+
     def test_symbolize
       mapper = ColumnMapper.new
       assert_equal :place, mapper.symbolize(";place")

@@ -57,6 +57,10 @@ module Tabular
       to_s.ljust width
     end
 
+    def to_tab_delimited
+      to_s.ljust width
+    end
+
     def inspect
       "#<Tabular::Column #{key} #{column_type}>"
     end

@@ -103,5 +103,9 @@ module Tabular
     def to_space_delimited
       map(&:to_space_delimited).join "   "
     end
+    
+    def to_tab_delimited
+      map(&:to_tab_delimited).join "\t"
+    end
   end
 end

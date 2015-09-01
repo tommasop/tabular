@@ -157,6 +157,10 @@ module Tabular
       ([ columns ] + rows).map(&:to_space_delimited).join("\n") << "\n"
     end
 
+    def to_tab_delimited
+      ([ columns ] + rows).map(&:to_tab_delimited).join("\n") << "\n"
+    end
+
     def to_s
       "#<#{self.class} #{rows.size}>"
     end

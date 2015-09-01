@@ -121,6 +121,16 @@ module Tabular
 
       _cells.join "   "
     end
+    
+    def to_tab_delimited
+      _cells = []
+
+      hash.each do |key, value|
+        _cells << (render(key) || "").ljust(columns[key].width)
+      end
+
+      _cells.join "\t"
+    end
 
     def inspect
       hash.inspect

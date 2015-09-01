@@ -143,6 +143,15 @@ module Tabular
       assert_equal "Mars     Sun ", row.to_space_delimited
     end
 
+    def test_to_tab_delimited
+      table = Table.new([[ "planet", "star" ]])
+      row = Row.new(table, [])
+      assert_equal "	", row.to_tab_delimited
+
+      row = Row.new(table, [ "Mars", "Sun" ])
+      assert_equal "Mars	Sun", row.to_tab_delimited
+    end
+
     def test_last
       table = Table.new([[ "planet", "star" ]])
       table << [ "Mars", "Sun" ]
